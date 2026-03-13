@@ -47,4 +47,15 @@ car_id INT,
 FOREIGN KEY (car_id) REFERENCES CAR(car_id)
 );
 
+
+INSERT INTO CAR(car_id, model, make, year, daily_rate, fuel_type, is_available)
+VALUES (1, '944 TURBO', 'PORSCHE', 1984, 200, 'PETROL', 'N');
+
+INSERT INTO CAR(car_id, model, make, year, daily_rate, fuel_type, is_available)
+VALUES (2, 'LC500', 'LEXUS', 2018, 600, 'PETROL', 'Y');
+
+INSERT INTO CAR(car_id, model, make, year, daily_rate, fuel_type, is_available)
+VALUES (3, 'EMIRA', 'LOTUS', 2023, 1000, 'PETROL', 'Y');
+
 SELECT table_name FROM USER_TABLES;
+SELECT make, model, year FROM CAR;
