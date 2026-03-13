@@ -36,10 +36,10 @@ fuel_type VARCHAR2(255),
 is_available VARCHAR2(1)
 );
 
-
+DROP TABLE MAINTENANCE;
 CREATE TABLE MAINTENANCE (
 maintenance_id INT PRIMARY KEY,
-type INT,
+type VARCHAR2(50),
 description VARCHAR2(200),
 cost INT,
 maintenance_date DATE,
@@ -57,5 +57,27 @@ VALUES (2, 'LC500', 'LEXUS', 2018, 600, 'PETROL', 'Y');
 INSERT INTO CAR(car_id, model, make, year, daily_rate, fuel_type, is_available)
 VALUES (3, 'EMIRA', 'LOTUS', 2023, 1000, 'PETROL', 'Y');
 
+INSERT INTO CAR(car_id, model, make, year, daily_rate, fuel_type, is_available)
+VALUES (4, 'YARIS', 'TOYOTA', 2015, 10, 'PETROL', 'Y');
+
+INSERT INTO CAR(car_id, model, make, year, daily_rate, fuel_type, is_available)
+VALUES (5, '918', 'PORSCHE', 2011, 3600, 'HYBRID', 'Y');
+
+SELECT * FROM MAINTENANCE;
+
+INSERT INTO MAINTENANCE(MAINTENANCE_ID, TYPE, DESCRIPTION, COST, MAINTENANCE_DATE, CAR_ID)
+VALUES (1, 'PART SWAP', 'Clutch Replacement', 2500, TO_DATE('2026-01-12','YYYY-MM-DD'), 4);
+
+
 SELECT table_name FROM USER_TABLES;
 SELECT make, model, year FROM CAR;
+
+SELECT * from CAR;
+
+UPDATE CAR
+SET DAILY_RATE=350
+where CAR_ID=1;
+
+UPDATE CAR
+SET FUEL_TYPE= 'HYBRID', is_available= 'N'
+where CAR_ID=3;
