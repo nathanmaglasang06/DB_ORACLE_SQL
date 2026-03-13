@@ -81,3 +81,8 @@ where CAR_ID=1;
 UPDATE CAR
 SET FUEL_TYPE= 'HYBRID', is_available= 'N'
 where CAR_ID=3;
+
+CREATE SEQUENCE maintenance_id_seq
+START WITH 2
+INCREMENT BY 1
+NOCYCLE;
